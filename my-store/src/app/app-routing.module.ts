@@ -1,11 +1,31 @@
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'signup',
     component :SignUpComponent
+  },
+  {
+    path: 'login',
+    component :LoginComponent
+  },
+  {
+    path: 'home',
+    component :HomeComponent
+  },
+  {
+    path: 'product-details',
+    component :ProductDetailsComponent
+  },
+  {
+    path: 'order',
+    component :OrderComponent
   }
 ];
 @NgModule({
