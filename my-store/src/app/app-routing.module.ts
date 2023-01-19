@@ -8,6 +8,10 @@ import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component :LoginComponent
+  },
+  {
     path: 'signup',
     component :SignUpComponent
   },
@@ -20,7 +24,7 @@ const routes: Routes = [
     component :HomeComponent
   },
   {
-    path: 'product-details',
+    path: 'product-details/:id',
     component :ProductDetailsComponent
   },
   {
