@@ -1,5 +1,10 @@
 # MyStore
 
+
+First you need to setup backend project to run this project 
+please clone backEnd project from the link
+https://github.com/MesharyAlsabaan/Udacity-Store-BackEnd
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0-rc.0.
 
 ## Development server
