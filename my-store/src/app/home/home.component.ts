@@ -18,6 +18,7 @@ export class HomeComponent {
     this.getAllProducts();
   }
 
+
   async getAllProducts() {
     await this._productApiService.getAllProducts().subscribe({
       next: (result) => {
@@ -29,9 +30,13 @@ export class HomeComponent {
     });
   }
 
-  openMenu(id: any) {
-    console.log(id);
-    
+  openMenu(id: any) {    
     this.router.navigate(['/product-details', id]);
   }
+
+ async createProduct(){
+    await this._productApiService.createProduct()
+    this.ngOnInit();
+}
+
 }

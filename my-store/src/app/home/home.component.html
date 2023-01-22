@@ -1,4 +1,5 @@
 <div class="container mt-5">
+    <button (click)="createProduct()" class="btn btn-primary">Click here to create dummy product</button>
     <div class="row">
         <div *ngFor="let product of products" class="col-12 col-md-3">
             <div (click)="openMenu(product.id)" class="card">

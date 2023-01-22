@@ -11,7 +11,20 @@ export class ProductApiService {
   getAllProducts() {
    return this.http.get('http://localhost:3000/product');
   }
-  getProductDetails(){
-    return this.http.get('http://localhost:3000/product/6719');
+  getProductDetails(id:any){
+    return this.http.get(`http://localhost:3000/product/${id}`);
+  }
+
+  createProduct(){
+    let body = { name: 'iphone', price: 12 };
+
+    return this.http.post('http://localhost:3000/product', body, { responseType: 'text' })
+    .subscribe({
+      next: (result) => {
+      },
+      error: (Error) => {
+          alert(Error.error);
+        },
+    });
   }
 }

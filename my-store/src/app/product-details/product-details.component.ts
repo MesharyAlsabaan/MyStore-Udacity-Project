@@ -20,12 +20,14 @@ export class ProductDetailsComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this._entityId = this._route.snapshot.paramMap.get('id');
-    this.getProductDetails();
+    console.log(this._entityId);
+    
+    this.getProductDetails(this._entityId);
     
   }
 
-  async getProductDetails() {
-    await this._productApiService.getProductDetails().subscribe({
+  async getProductDetails(id:any) {
+    await this._productApiService.getProductDetails(id).subscribe({
       next: (result) => {
        this.product = result;
       },

@@ -14,29 +14,20 @@ export class OrderComponent {
   cartProducts: any;
   totalPrice: number = 0;
 
-  ngOnInit(): void {
-    // console.log('what is ');
-    
+  ngOnInit(): void {    
     this.getCart();
-
-    // this._entityId = this._route.snapshot.paramMap.get('id');
-    // this.getProductDetails();
   }
 
   getTotalPrice() {
     for (let i = 0; i < this.cartProducts.length; i++) {
       this.totalPrice = this.totalPrice + this.cartProducts[i].price;
-    }
-    console.log(this.totalPrice);
-    
+    }    
   }
 
   async getCart() {
     await this._orderApiService.getCart().subscribe({
       next: (result) => {
-        
         this.cartProducts = result;
-        console.log(this.cartProducts);
         this.getTotalPrice();
       },
       error: (Error) => {
@@ -49,6 +40,5 @@ export class OrderComponent {
   checkOut(){
     alert('Thank you for purchsing from us');
     this.router.navigate(['/home']);
-
   }
 }
