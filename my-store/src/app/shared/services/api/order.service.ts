@@ -44,4 +44,16 @@ export class OrderApiService {
 
   return this.http.get(`http://localhost:3000/cart/${userId}`);
  }
+
+ deleteCart(id:any){
+   console.log(id);
+   
+
+  return this.http.delete(`http://localhost:3000/cart/${id}`).subscribe({
+    next:(result)=>{
+      
+    }
+  })
+
+ }
 }

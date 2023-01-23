@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderApiService } from '../shared/services/api/order.service';
 
@@ -16,7 +17,15 @@ export class OrderComponent {
 
   ngOnInit(): void {    
     this.getCart();
+    // this.getTotalPrice();
   }
+  profileForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    cardNumber: new FormControl('', [Validators.minLength(10), Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]),
+    date: new FormControl('', [Validators.required]),
+    cvv: new FormControl('', [Validators.minLength(3), Validators.pattern("^[0-9]*$"),Validators.maxLength(3)]),
+
+  });
 
   getTotalPrice() {
     for (let i = 0; i < this.cartProducts.length; i++) {
@@ -28,6 +37,8 @@ export class OrderComponent {
     await this._orderApiService.getCart().subscribe({
       next: (result) => {
         this.cartProducts = result;
+        console.log(result);
+        
         this.getTotalPrice();
       },
       error: (Error) => {
@@ -38,7 +49,19 @@ export class OrderComponent {
 
 
   checkOut(){
-    alert('Thank you for purchsing from us');
     this.router.navigate(['/home']);
+  }
+  goHome(){
+    this.router.navigate(['/home']);
+  }
+
+
+  deleteProduct(id:any){
+
+    this._orderApiService.deleteCart(id);
+
+    location.reload();
+    
+
   }
 }

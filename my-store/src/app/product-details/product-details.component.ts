@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../models/product';
 import { OrderApiService } from '../shared/services/api/order.service';
 import { ProductApiService } from '../shared/services/api/product.service';
 
@@ -10,7 +11,7 @@ import { ProductApiService } from '../shared/services/api/product.service';
 })
 export class ProductDetailsComponent {
   _entityId: any;
-  product:any;
+  product:Product[] = [];
   constructor (private _route: ActivatedRoute,
     private _productApiService: ProductApiService,
     private _orderApiService:OrderApiService
