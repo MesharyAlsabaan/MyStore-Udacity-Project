@@ -1,0 +1,18 @@
+    <div (click)="clickOnCard(product.id)" class="card">
+        <div class="image-container">
+            <div class="first">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="wishlist"><i class="fa fa-heart-o"></i></span>
+                </div>
+            </div>
+            <img src="https://i.imgur.com/8JIWpnw.jpg" class="img-fluid rounded thumbnail-image">
+        </div>
+        <div class="product-detail-container p-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="dress-name">{{product.name}}</h5>
+                <div class="d-flex flex-column mb-2">
+                    <span class="new-price">{{product.price}}$</span>
+                </div>
+            </div>
+        </div>
+    </div>
