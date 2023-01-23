@@ -10,6 +10,7 @@ import { UserApiService } from '../shared/services/api/user.service';
 })
 export class SignUpComponent {
   constructor(private _userApiService: UserApiService) {}
+  name: string = '';
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
