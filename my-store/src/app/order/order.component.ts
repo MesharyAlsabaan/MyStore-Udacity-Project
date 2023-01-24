@@ -28,6 +28,7 @@ export class OrderComponent {
   });
 
   getTotalPrice() {
+    
     for (let i = 0; i < this.cartProducts.length; i++) {
       this.totalPrice = this.totalPrice + this.cartProducts[i].price;
     }    
@@ -64,4 +65,15 @@ export class OrderComponent {
     
 
   }
+//  async changeTotalPrice(event:any){
+//    this.totalPrice = 0;
+//    this.getTotalPrice();
+//     console.log(this.totalPrice);
+    
+//     let value = event*12;
+//     this.totalPrice = this.totalPrice + value;
+    
+    
+
+//   }
 }

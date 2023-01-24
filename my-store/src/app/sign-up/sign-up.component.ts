@@ -11,6 +11,7 @@ import { UserApiService } from '../shared/services/api/user.service';
 export class SignUpComponent {
   constructor(private _userApiService: UserApiService) {}
   name: string = '';
+  _gender:string = '';
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
@@ -31,5 +32,11 @@ export class SignUpComponent {
       value.address,
       value.city
     );
+  }
+  gender(gender:any){
+
+    this._gender = gender;
+    
+
   }
 }
